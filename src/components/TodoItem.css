@@ -1,0 +1,43 @@
+.todo-marcado {
+
+    text-decoration: line-through;
+    background-color: orange;
+    margin-top: 20px;
+    padding: 10px;
+    margin-top: 20px;
+
+}
+
+input[type="checkbox"] {
+    width: 50px;
+    height: 20px;
+    margin-top: 15px;
+}
+
+
+.sombra {
+    margin: 10px;
+    border: none;
+    width: 100px;
+    margin-right: 10px;
+    padding: 5px;
+    font-size: 1.5rem;
+    box-shadow: 0px 6px 5px #888888;
+    outline: none;
+    border-radius: 5px;
+}
+
+
+
+.add-btn {
+    font-size: 1.5rem;
+    z-index: 999;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    transition: .3s ease-in all;
+}
+
+.add-btn:hover {
+    background-color: rosybrown;
+}

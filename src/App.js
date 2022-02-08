@@ -1,23 +1,42 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import data from './data.json';
+import TodoList from './components/TodoList';
+import TodoForm from './components/TodoForm ';
+
+
+
 
 function App() {
+
+  const [tareas, setTareas] = useState(data);
+
+  console.log(tareas);
+
+  const onCompleted = (id) => {
+    //console.log(id);
+
+    setTareas(tareas.map((tarea) => {
+      return tarea.id === Number(id) ? { ...tarea, completed: !tarea.completed } : { ...tarea };
+    }))
+  }
+
+  const onDeleteItem = (id) => {
+    //console.log('deleted', id);
+    setTareas([...tareas].filter(tarea => tarea.id !== id));
+  }
+
+  const agregrarTarea = (nuevaTarea) => {
+    console.log('nueva tarea', nuevaTarea);
+    let nuevoItem = { id: +new Date(), task: nuevaTarea, completed: false };
+    setTareas([...tareas, nuevoItem]);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+
+      <TodoForm agregrarTarea={agregrarTarea} />
+      <TodoList tareas={tareas} onCompleted={onCompleted} onDeleteItem={onDeleteItem} />
     </div>
   );
 }

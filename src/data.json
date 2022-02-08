@@ -1,0 +1,17 @@
+[
+    {
+    "id":1,
+    "task":"ir a la tienda",
+    "completed":false
+},
+{
+    "id":2,
+    "task":"hacer ejercicio",
+    "completed":false
+},
+{
+    "id":3,
+    "task":"estudiar",
+    "completed":true
+}
+]
