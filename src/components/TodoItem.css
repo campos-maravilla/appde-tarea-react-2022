@@ -36,6 +36,7 @@ input[type="checkbox"] {
     border: none;
     padding: 5px;
     transition: .3s ease-in all;
+    background-color: rgb(78, 7, 192);
 }
 
 .add-btn:hover {
