@@ -1,5 +1,5 @@
 import React from 'react';
-import estilos from './TodoItem.css';
+import './TodoItem.css';
 
 
 const TodoItem = ({ tarea, onCompleted, onDeleteItem }) => {
